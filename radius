@@ -1,0 +1,23 @@
+#!/bin/sh
+#Program:
+#	Extract element POTCAR (PAW_PBE) from $pot directory
+ele1=$1
+SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+pot=$SCRIPTDIR
+ele=`ls $pot/paw_pbe/ | grep $ele1 |sed -n '1p'` 
+if [ -f $pot/paw_pbe/$ele/POTCAR ] ; then 
+   cat $pot/paw_pbe/$ele/POTCAR | sed -n '14p' | awk '{print $6}'
+elif [ -f $pot/paw_pbe/$ele/POTCAR.Z ] ; then 
+   zcat $pot/paw_pbe/$ele/POTCAR.Z | sed -n '14p' | awk '{print $6}'
+elif [ -f $pot/paw_pbe/$ele/POTCAR.gz ] ; then 
+   zcat $pot/paw_pbe/$ele/POTCAR.gz | sed -n '14p' | awk '{print $6}'
+elif [ -f $pot/paw_pbe/"$ele"_sv/POTCAR  ] ; then 
+   cat $pot/paw_pbe/"$ele"_sv/POTCAR | sed -n '14p' | awk '{print $6}'
+elif [ -f $pot/paw_pbe/"$ele"_sv/POTCAR.Z  ] ; then 
+   zcat $pot/paw_pbe/"$ele"_sv/POTCAR.Z | sed -n '14p' | awk '{print $6}'
+elif [ -f $pot/paw_pbe/"$ele"_sv/POTCAR.gz ] ; then 
+   zcat $pot/paw_pbe/"$ele"_sv/POTCAR.gz | sed -n '14p' | awk '{print $6}'
+else
+   echo "pot error: No {$ele} element pseudopotential found! Aborting..."
+   exit 64
+fi

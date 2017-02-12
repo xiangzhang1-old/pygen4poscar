@@ -1,0 +1,3 @@
+#!/bin/bash
+SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+${SCRIPTDIR}/../pygen.py generic template \"dperovskite\" genposcar nions 4 ion1 \"Sr\" ion2 \"Hf\" ion3 \"Os\" ion4 \"O\" readposcar optposcar

@@ -1,0 +1,5 @@
+generic::template
+genposcar::nions
+readposcar::truncate_dist_at;exclude_pair;exclude_ele_pair;exclude_dist
+optposcar::
+getj::

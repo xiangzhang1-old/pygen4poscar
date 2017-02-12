@@ -1,0 +1,12 @@
+genposcar::nions=1:::ion1:0
+genposcar::nions=2:::ion1;ion2:0
+genposcar::nions=3:::ion1;ion2;ion3:0
+genposcar::nions=4:::ion1;ion2;ion3;ion4:0
+genposcar::nions=5:::ion1;ion2;ion3;ion4;ion5:0
+genposcar::nions=6:::ion1;ion2;ion3;ion4;ion5;ion6:0
+genposcar::nions=7:::ion1;ion2;ion3;ion4;ion5;ion6;ion7:0
+genposcar::nions=8:::ion1;ion2;ion3;ion4;ion5;ion6;ion7;ion8:0
+genposcar::nions=9:::ion1;ion2;ion3;ion4;ion5;ion6;ion7;ion8;ion9:0
+genposcar::nions=10:::ion1;ion2;ion3;ion4;ion5;ion6;ion7;ion8;ion9;ion10:0
+readposcar::template='dperovskite'::truncate_dist_at=4;exclude_pair=[];exclude_ele_pair=[['O','O']];exclude_dist=[];bond_len_error=0.1::0
+readposcar::template='ddperovskite'::truncate_dist_at=5;exclude_pair=[];exclude_ele_pair=[['O','O']];exclude_dist=[];bond_len_error=0.5::0
